@@ -1,11 +1,12 @@
 # Umbrel Migration
 
+Migration guide to transfer LND from one Umbrel machine to another
 
-### New Node
+***Save channel backup before you begin!***
 
-***Save channel backup before you begin***
+### Old Node
 
-*Optional:* Limit forwarding to reduce risk of force-closures during migration:
+*Optional:* Limit forwarding on old node to reduce risk of force-closures during migration:
 ```shell
 bos limit-forwarding --disable-forwards
 ```
