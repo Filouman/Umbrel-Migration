@@ -5,6 +5,12 @@
 
 ***Save channel backup before you begin***
 
+*Optional:* Limit forwarding to reduce risk of force-closures during migration
+```shell
+bos limit-forwarding --disable-forwards
+```
+Wait for any pending HTLCs to clear before proceeding with migration. 
+ 
 Open SSH session and tail LND logs to ensure it stops:
 ```shell
 docker logs -f lightning_lnd_1
