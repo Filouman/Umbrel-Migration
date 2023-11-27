@@ -16,6 +16,11 @@ Open SSH session and tail LND logs to ensure it stops:
 ```shell
 docker logs -f lightning_lnd_1
 ```
+-or-
+```shell
+tail -f  ~/umbrel/app-data/lightning/data/lnd/logs/bitcoin/mainnet/lnd.log
+```
+
 Open second SSH session and stop LND:
 ```shell
 sudo ./umbrel/scripts/stop
@@ -52,7 +57,10 @@ Open a second SSH session and tail LND logs to ensure it starts completely with 
 ```shell
 docker logs -f lightning_lnd_1
 ```
-
+-or-
+```shell
+tail -f  ~/umbrel/app-data/lightning/data/lnd/logs/bitcoin/mainnet/lnd.log
+```
 
 ### IMPORTANT
 
