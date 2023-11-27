@@ -1,11 +1,11 @@
 # Umbrel Migration
 
 
-### OLD NODE
+### New Node
 
 ***Save channel backup before you begin***
 
-*Optional:* Limit forwarding to reduce risk of force-closures during migration
+*Optional:* Limit forwarding to reduce risk of force-closures during migration:
 ```shell
 bos limit-forwarding --disable-forwards
 ```
@@ -15,25 +15,23 @@ Open SSH session and tail LND logs to ensure it stops:
 ```shell
 docker logs -f lightning_lnd_1
 ```
-
 Open second SSH session and stop LND:
 ```shell
 sudo ./umbrel/scripts/stop
 ```
-
 Check LND is stopped in logs in first SSH session.
 
 
 ### New node
 
-Copy LND from old node to new node
+Copy LND from old node to new node:
 ```shell
 sudo rsync -arhvP --append-verify umbrel@umbrel.local:~/umbrel/app-data/lightning ~/umbrel/app-data
 ```
 Wait for copying to finish.
 
 
-### Old node
+### Old Node
 
 Destroy the heart of old node (rename channel.db / lnd.conf files):
 ```shell
@@ -42,7 +40,8 @@ sudo mv ~/umbrel/app-data/lightning/data/lnd/lnd.conf ~/umbrel/app-data/lightnin
 sudo mv ~/umbrel/app-data/lightning/data/lnd/umbrel-lnd.conf ~/umbrel/app-data/lightning/data/lnd/umbrel-lnd.bak
 ```
 
-### NEW NODE
+
+### New Node
 
 Start LND in first terminal session:
 ```shell
@@ -52,3 +51,8 @@ Open a second SSH session and tail LND logs to ensure it starts completely with 
 ```shell
 docker logs -f lightning_lnd_1
 ```
+
+
+### IMPORTANT
+
+***Never start LND on the old node again.***
