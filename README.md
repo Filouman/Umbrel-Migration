@@ -22,7 +22,7 @@ Check LND is stopped in logs in first SSH session.
 
 Copy LND from old node to new node
 ```shell
-sudo rsync -arhvP --append-verify umbrel@umbrel.local:~/umbrel/app-data/lightning/data/lnd ~/umbrel/app-data/lightning/data
+sudo rsync -arhvP --append-verify umbrel@umbrel.local:~/umbrel/app-data/lightning ~/umbrel/app-data
 ```
 Wait for copying to finish.
 
