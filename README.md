@@ -32,9 +32,7 @@ Wait for copying to finish.
 Destroy the heart of old node (rename channel.db / lnd.conf files):
 ```shell
 sudo mv ~/umbrel/app-data/lightning/data/lnd/data/graph/mainnet/channel.db ~/umbrel/app-data/lightning/data/lnd/data/graph/mainnet/channel.bak
-
 sudo -u bitcoin mv ~/umbrel/app-data/lightning/data/lnd/lnd.conf ~/umbrel/app-data/lightning/data/lnd/lnd.bak
-
 sudo -u bitcoin sudo mv ~/umbrel/app-data/lightning/data/lnd/umbrel-lnd.conf ~/umbrel/app-data/lightning/data/lnd/umbrel-lnd.bak
 ```
 
